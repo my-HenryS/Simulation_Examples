@@ -28,7 +28,6 @@ public class MyBodyForce extends TypeMatchRegulation<Blockable, Agent> {
         k1 = 1.2 * 100000;
         k2 = 2.4 * 100000;
         g = 0;
-        argumentX = 1;
         double temp[] = new double[2];
         if (source instanceof Moveable){
             tempVector = (Vector2D)((Moveable)source).getVelocity().clone();
@@ -40,9 +39,13 @@ public class MyBodyForce extends TypeMatchRegulation<Blockable, Agent> {
         n.get(temp);
         t = new Vector2D(-temp[1],temp[0]);
         distance = (target.getShape().distanceTo(source.getShape()));
-        if (distance < 0){g = argumentX;}
-        bodyForce =  k1*g*Math.abs(distance);
-        slidingForce = k2*g*Math.abs(distance)*t.dot(tempVector);
+        if (distance < 0)
+            g = 1;
+
+        //TODO： fill in the blanks
+        bodyForce = ________________;
+        slidingForce = ____________________;
+
         n.scale(bodyForce);
         t.scale(slidingForce);
         n.add(t);
