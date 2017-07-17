@@ -1,3 +1,6 @@
+package org.example.application;
+
+import org.example.model.SocialForceModel;
 import org.socialforce.app.Applications.SimpleApplication;
 import org.socialforce.geom.DistanceShape;
 import org.socialforce.geom.impl.Box2D;
@@ -18,12 +21,12 @@ import java.util.Iterator;
 /**
  * Created by sunjh1999 on 2017/2/26.
  */
-public class ApplicationForNeuralModel extends SimpleApplication {
+public class DemoApplication extends SimpleApplication {
     DistanceShape template;
-    public ApplicationForNeuralModel(){
+    public DemoApplication(){
     }
     /**
-     * start the application immediately.
+     * start the org.example.application immediately.
      */
     @Override
     public void start() {
@@ -49,7 +52,7 @@ public class ApplicationForNeuralModel extends SimpleApplication {
         SceneLoader loader = new StandardSceneLoader(new SimpleScene(new Box2D(-50, -50, 100, 100)),
                 new Wall[]{
                         new Wall(new Box2D(20,-3,1,15))
-                }).setModel(new NewForceModel());
+                }).setModel(new SocialForceModel());
 
         SimpleParameterPool parameters = new SimpleParameterPool();
 
