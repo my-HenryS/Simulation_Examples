@@ -6,6 +6,7 @@ import org.socialforce.container.Pool;
 import org.socialforce.geom.*;
 import org.socialforce.geom.impl.*;
 import org.socialforce.model.*;
+import org.socialforce.model.impl.SimpleForceModel;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -132,6 +133,6 @@ public class SocialForceModel implements Model {
     }
 
     public Model clone(){
-        return new org.socialforce.model.impl.SimpleForceModel();
+        return new SocialForceModel();
     }
 }
